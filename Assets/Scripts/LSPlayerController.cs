@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 
 public class LSPlayerController : MonoBehaviour
 {
@@ -79,6 +78,12 @@ public class LSPlayerController : MonoBehaviour
                     SetAnimation();
             }
         }
+    }
+
+    void FixedUpdate()
+    {
+        // Check for player input
+        GetMovement();
     }
     #endregion
 
@@ -214,6 +219,9 @@ public class LSPlayerController : MonoBehaviour
 
             // Check for player input 
             CheckInput();
+
+            // Remove fr new input system
+            SelectLevel();
         }
 
         // Check if map point is a corner move the player to the next map point
@@ -234,6 +242,9 @@ public class LSPlayerController : MonoBehaviour
 
             // Check for player input 
             CheckInput();
+
+            // Remove fr new input system
+            SelectLevel();
         }
     }
 
@@ -318,19 +329,19 @@ public class LSPlayerController : MonoBehaviour
         }
     }
 
-    public void GetMovement(InputAction.CallbackContext context)
+    public void GetMovement()
     {
         // Get the movement vector
-        movement = context.ReadValue<Vector2>();
+        movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // Get the x & y input values
         x = movement.x;
         y = movement.y;
     }
 
-    public void SelectLevel(InputAction.CallbackContext context)
+    public void SelectLevel()
     {
         // Check for input from the chosen button
-        if (context.performed)
+        if (Input.GetButtonDown("Fire1"))
         {
             // Check if the current point is not null
             if (currentPoint != null)
