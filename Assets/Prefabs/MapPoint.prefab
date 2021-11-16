@@ -92,8 +92,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7735466902430721053}
   - component: {fileID: 7735466902430721051}
+  - component: {fileID: 2262166810726420129}
   m_Layer: 0
-  m_Name: WayPoint
+  m_Name: MapPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,3 +131,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &2262166810726420129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7735466902430721055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436f129e1f286e5479fad12382483f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  up: {fileID: 0}
+  right: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  levelIndex: 0
+  sceneToLoad: 
+  levelName: 
+  isLocked: 0
+  isLevel: 0
+  isCorner: 0
+  isWarpPoint: 0
+  autoWarp: 0
+  haswarped: 0
+  warpPoint: {fileID: 0}
+  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 0}
+  levelText: {fileID: 0}
+  levelPanel: {fileID: 0}
